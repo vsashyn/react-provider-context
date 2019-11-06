@@ -11,7 +11,6 @@ interface ModalProps {
  * Consumer of the context. Should get all public available API
  */
 function Modal(props) {
-  console.log(props);
   return (
     <div>
       Is form valid: {props.isFormValid.toString()}.

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { render } from "react-dom";
 
-import { CheckoutProvider } from "./CCCheckoutWidgetProvider";
+import { CheckoutProvider } from "./CheckoutWidgetProvider";
 import { Modal } from "./Modal";
 
 import "./styles.css";

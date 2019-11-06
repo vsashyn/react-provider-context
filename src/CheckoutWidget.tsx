@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CheckoutContext } from './CCCheckoutWidgetProvider'
+import { CheckoutContext } from './CheckoutWidgetProvider'
 import { FlexDirectionProperty } from "csstype";
 
 interface CheckoutWidget {
