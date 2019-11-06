@@ -6,7 +6,6 @@ import { CheckoutWidget } from "./CheckoutWidget";
 interface ModalProps {
   isFormValid: boolean;
   startPayment();
-  merchantId: string;
 }
 /**
  * Consumer of the context. Should get all public available API
