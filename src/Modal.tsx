@@ -15,16 +15,17 @@ function Modal(props) {
   console.log(props);
   return (
     <div>
-      {" "}
       Is form valid: {props.isFormValid.toString()}.
       <br />
       <CheckoutWidget />
       <button
         onClick={() => {
-          props.startPayment();
+          if (props.isFormValid) {
+            props.startPayment();
+          }
         }}
       >
-        Start payment
+        Start payment (button enabled: {props.isFormValid.toString()})
       </button>
     </div>
   );

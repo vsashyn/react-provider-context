@@ -1,14 +1,15 @@
 import * as React from "react";
 
+function noop(p) {}
 /**
- * Checkout team. **Internal context**. Should not be provided by API.
+ * **Internal API**
+ * Checkout team. Should not be provided by API.
  */
 const CheckoutContext = React.createContext({
+  merchantId: "",
   isFormValid: false,
-  startPayment() {
-    console.log("start payment");
-  },
-  merchantId: ""
+  setIsFormValid: noop,
+  startPayment: noop,
 });
 
 export { CheckoutContext };
@@ -19,16 +20,18 @@ interface CheckoutProviderProps {
 }
 
 /**
+ * **External API**
  * Checkout team. Should be used on top of all module.
  */
 export function CheckoutProvider(props: CheckoutProviderProps) {
-  const [merchantId, setMerchantId] = React.useState(props.merchantId);
+  const [merchantId] = React.useState(props.merchantId);
   const [isFormValid, setIsFormValid] = React.useState(false);
   return (
     <CheckoutContext.Provider
       value={{
         isFormValid: isFormValid,
-        merchantId: props.merchantId,
+        merchantId: merchantId,
+        setIsFormValid,
         startPayment() {
           console.log("start payment");
         }
