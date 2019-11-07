@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function noop(p) {}
+function noop(p?) {}
 /**
  * **Internal API**
  * Checkout team. Should not be provided by API.
